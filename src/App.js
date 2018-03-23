@@ -3,13 +3,20 @@ import "./reset.css";
 import "./App.css";
 import axios from "axios";
 import Filter from "./Components/Filter";
+import CaseFile from "./Components/CaseFile";
+import MakeArrest from "./Components/MakeArrest";
+import SearchCase from "./Components/SearchCase";
+import Header from "./Components/Header";
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      header: "LAW AND ORDER",
+      unit: "Special Victims Unit",
       people: [],
       // baseUrl: "https://swapi.co/api/",
-      baseUrl: "https://data.police.uk/api/crime-categories",
+      baseUrl:
+        "https://data.police.uk/api/crimes-no-location?category=all-crime&force=leicestershire",
       input: ""
     };
   }
@@ -30,66 +37,22 @@ class App extends Component {
     }
     return (
       <div className="home-page">
-        <header>{/* <h1 /> */}</header>
+        <Header mainHeader={this.state.header} policeSquad={this.state.unit} />
         <section>
-          <figure>
-            <h3>Commit a crime</h3>
-            <input />
-            <input />
-            <button />
-          </figure>
+          <MakeArrest />
+          <SearchCase />
         </section>
         <main>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
-          <form>
-            <h4 />
-            <p />
-            <button />
-          </form>
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
+          <CaseFile />
         </main>
       </div>
     );
