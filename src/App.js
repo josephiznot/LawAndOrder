@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./reset.css";
 import "./App.css";
 import axios from "axios";
 import Filter from "./Components/Filter";
@@ -23,14 +24,73 @@ class App extends Component {
   }
   render() {
     console.log(this.state.people);
+    {
+      /* <input onChange={e => this.handleChange(e.target.value)} />
+    <Filter input={this.state.input} people={this.state.people} /> */
+    }
     return (
-      <div>
-        <input onChange={e => this.handleChange(e.target.value)} />
-        <Filter
-          input={this.state.input}
-          people={this.state.people}
-          className={"App"}
-        />
+      <div className="home-page">
+        <header>{/* <h1 /> */}</header>
+        <section>
+          <figure>
+            <h3>Commit a crime</h3>
+            <input />
+            <input />
+            <button />
+          </figure>
+        </section>
+        <main>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+          <form>
+            <h4 />
+            <p />
+            <button />
+          </form>
+        </main>
       </div>
     );
   }

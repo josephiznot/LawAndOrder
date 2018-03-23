@@ -1,0 +1,49 @@
+header,
+section,
+main,
+.home-page,
+figure,
+form {
+  border: 1px black solid;
+}
+.home-page {
+  width: 100vw;
+  height: 100vh;
+}
+header {
+  width: 100vw;
+  height: 25vh;
+}
+section {
+  width: 100vw;
+  height: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 100vw;
+  height: 56vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+figure {
+  width: 34vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+form {
+  width: 17vw;
+  height: 23vh;
+  border-radius: 6px;
+}
+input,
+button {
+  width: 10vw;
+  height: 2vh;
+}
