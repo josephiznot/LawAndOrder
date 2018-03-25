@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-
-function MakeArrest(props) {
-  return (
-    <figure>
-      <h4>Make an Arrrest</h4>
-      <input placeholder="enter a crime" />
-      <input placeholder="enter outcome status" />
-      <button>PROSECUTE</button>
-    </figure>
-  );
+export default function MakeArrest(props) {
+  if (props.categoryProp === "" || props.outcomeProp === "") {
+    return <button onClick={props.alertUser}>PROSECUTE</button>;
+  }
+  return <button onClick={props.sendState}>PROSECUTE</button>;
 }
-export default MakeArrest;

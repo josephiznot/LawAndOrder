@@ -17,6 +17,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background: black;
 }
 section {
   width: 100vw;
@@ -40,27 +41,59 @@ figure {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 6px;
+  box-shadow: -5px -2px 8px 1px blue;
 }
 form {
-  width: 17vw;
+  width: 13vw;
   height: 23vh;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 2em 0 2em;
+  margin: 2vh 0 2vh 0;
+  box-shadow: -5px -2px 8px 1px red;
 }
 input,
 button {
   width: 10vw;
   height: 2vh;
 }
+p {
+  font-size: 1em;
+  text-align: center;
+}
 h1 {
-  font-size: 5em;
+  font-size: 3em;
 }
 h3 {
   font-size: 2em;
 }
 h4 {
-  font-size: 1.2em;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 700;
+}
+.blue {
+  text-shadow: -5px -1px 8px blue;
+  color: white;
+}
+.red {
+  text-shadow: -5px -1px 8px red;
+  color: white;
+}
+.orange {
+  text-shadow: -5px -1px 8px orange;
+  color: white;
+}
+form div span {
+  width: 20vw;
+  height: 10vh;
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
