@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import "./reset.css";
 import "./App.css";
 import axios from "axios";
-import Filter from "./Components/Filter";
 import CaseFile from "./Components/CaseFile";
 import MakeArrest from "./Components/MakeArrest";
 // import SearchCase from "./Components/SearchCase";
 import Header from "./Components/Header";
-// import DataBase from "./server/DataBase";
 class App extends Component {
   constructor() {
     super();
@@ -22,46 +20,44 @@ class App extends Component {
       },
       searchCrime: "",
       searchOutcome: "",
-      id: 100000000000,
       newCase: [],
       defaultValue: ""
     };
     this.postRequest = this.postRequest.bind(this);
     this.invalid = this.invalid.bind(this);
     this.deleteRequest = this.deleteRequest.bind(this);
+    this.putRequest = this.putRequest.bind(this);
   }
   componentWillMount() {
     axios.get(`/api/crimes`).then(response => {
       this.setState({ people: response.data });
-      console.log(this.state.people);
     });
   }
   postRequest() {
-    let { category, outcome_status, id } = this.state;
-    axios.post(`/api/crimes`, { category, outcome_status, id }).then(res => {
-      this.setState({ people: res.data, id: id + 1 });
+    let { category, outcome_status } = this.state;
+    axios.post(`/api/crimes`, { category, outcome_status }).then(res => {
+      this.setState({ people: res.data });
     });
   }
   deleteRequest(id) {
-    let { people } = this.state;
     axios.delete(`/api/crimes/${id}`).then(res => {
       this.setState({ people: res.data });
     });
-    // console.log(people);
   }
-  // putRequest() {
-  //   let { people, id } = this.state;
-  //   axios.put(`/api/crimes`).then(res => {
-  //     this.setState({ people: res.data });
-  //   });
-  // }
+  putRequest(id, categoryInput, outcome_statusInput) {
+    // let { category, outcome_status } = this.state;
+    axios
+      .put(`/api/crimes/${id}`, { categoryInput, outcome_statusInput })
+      .then(res => {
+        this.setState({ people: res.data });
+      });
+  }
   invalid() {
     return alert("Make a valid arrest");
   }
   render() {
-    // console.log(this.state.people);
+    console.log(this.state.people);
     var { people } = this.state;
-    // console.log(people[100].category);
     var peopleMapped = people
       .filter(e => {
         return e.category
@@ -73,14 +69,14 @@ class App extends Component {
           .toUpperCase()
           .includes(this.state.searchOutcome.toUpperCase());
       })
-      .map(e => {
+      .map((e, ind) => {
         let { id } = e;
         return (
           <CaseFile
-            peopleProps={e.category}
-            key={id}
+            category={e.category}
+            key={ind}
             id={id}
-            outcome={e.outcome_status.category}
+            outcome_status={e.outcome_status.category}
             deleteRequest={this.deleteRequest}
             putRequest={this.putRequest}
           />
@@ -110,7 +106,7 @@ class App extends Component {
               }
             />
             <MakeArrest
-              sendState={this.postRequest}
+              postRequest={this.postRequest}
               categoryProp={this.state.category}
               outcomeProp={this.state.outcome_status.category}
               alertUser={this.invalid}

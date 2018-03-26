@@ -8,7 +8,7 @@ const restCtrls = require("./Controllers/restCtrls");
 
 var crimes = [];
 app.get("/api/crimes", restCtrls.gitter);
-// app.put("/api/crimes/:id", restCtrls.putter);
+app.put("/api/crimes/:id", restCtrls.putter);
 app.post("/api/crimes", restCtrls.poster);
 app.delete("/api/crimes/:id", restCtrls.deleter);
 app.listen(port, function() {
