@@ -7,8 +7,11 @@
 //       searchOutcome: ""
 //     };
 //   }
+//      searchCase(val){
+//   this.setState({searchOutcome: val})
+//}
 //   render() {
-//     let { SearchCase } = this.props;
+//     let { searchCase } = this.props;
 //     return (
 //       <figure>
 //         <h4>Search Case File</h4>
@@ -18,7 +21,7 @@
 //         />
 //         <input
 //           placeholder="Search outcome status"
-//           onChange={e => this.setState({ searchOutcome: e.target.value })}
+//           onChange={e => searchCase(e.target.value)}
 //         />
 //       </figure>
 //     );

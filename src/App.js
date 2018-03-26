@@ -65,7 +65,6 @@ class App extends Component {
   //   });
   // }
   render() {
-    console.log(this.state.people);
     var { people } = this.state;
     var peopleMapped = people
       .filter(e => {
@@ -137,6 +136,7 @@ class App extends Component {
           {/* <SearchCase searchCase={this.searchCase} /> */}
         </section>
         <main>{peopleMapped}</main>
+        <footer>&copy; COPYRIGHT JOE ANDY 2018</footer>
       </div>
     );
   }

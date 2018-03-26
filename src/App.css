@@ -1,14 +1,22 @@
-header,
+/* header,
 section,
 main,
 .home-page,
 figure,
 form {
   border: 1px black solid;
-}
+} */
 .home-page {
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("https://i523.photobucket.com/albums/w353/roosevelts2/Misc/svu2.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 header {
   width: 100vw;
@@ -25,14 +33,11 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* position: fixed;
-  background-image: url("http://www.lawyersgunsmoneyblog.com/wp-content/uploads/2013/07/law-and-order00018.png"); */
-  background: #b8b8b8;
 }
 
 main {
   width: 100vw;
-  height: 56vh;
+  min-height: 58vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -40,37 +45,37 @@ main {
   background: #fff3b7;
 }
 figure {
-  width: 34vw;
-  height: 15vh;
+  width: 15vw;
+  height: 17vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 6px;
-  /* box-shadow: -5px -2px 8px 1px blue; */
-  background: #fba737;
+  border-radius: 8px;
+  background: #f4b400;
 }
 form {
   width: 13vw;
   height: 23vh;
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 0 2em 0 2em;
   margin: 2vh 0 2vh 0;
-  /* box-shadow: -5px -2px 8px 1px red; */
   background: #f4b400;
 }
 input,
 button {
-  width: 10vw;
+  width: 8vw;
   height: 2vh;
   background: #b8b8b8;
+  border-radius: 5px;
+  border-style: groove;
 }
 p {
-  font-size: 1em;
+  font-size: 0.85em;
   text-align: center;
 }
 h1 {
@@ -80,7 +85,7 @@ h3 {
   font-size: 2em;
 }
 h4 {
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: center;
   font-weight: 700;
 }
@@ -96,20 +101,29 @@ h4 {
   text-shadow: -5px -1px 8px orange;
   color: white;
 }
-form div span {
-  width: 20vw;
-  height: 10vh;
-  border: 1px black solid;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-/* .condition1 {
+form span {
   width: 13vw;
-  height: 23vh;
+  height: 8vh;
+  /* border: 1px black solid; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-} */
+}
+button:hover {
+  box-shadow: -1px -1px 8px 1px blue;
+}
+span button:hover {
+  box-shadow: -1px -1px 8px 1px red;
+  animation: ease-in-out 0.4;
+}
+input:hover {
+  width: 9vw;
+}
+footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff3b7;
+}

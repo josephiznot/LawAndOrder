@@ -6,10 +6,14 @@ axios
     "https://data.police.uk/api/crimes-no-location?category=all-crime&force=leicestershire"
   )
   .then(response => {
-    crimes = response.data.filter((e, i, arr) => {
-      return arr.map(element => element.category).indexOf(e.category) === i;
-    });
+    crimes = response.data;
   });
+//
+// To filter through the api and only receive one category of each crime>>>>
+//
+//    crimes = response.data.filter((e, i, arr) => {
+//   return arr.map(element => element.category).indexOf(e.category) === i;
+// });
 module.exports = {
   gitter: function(req, res, next) {
     res.status(200).json(crimes);

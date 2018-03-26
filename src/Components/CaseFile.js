@@ -16,19 +16,28 @@ class CaseFile extends Component {
   }
   handleAppeal() {
     let { switchBtn, categoryInput, outcome_statusInput } = this.state;
-    let { putRequest, id } = this.props;
-    putRequest(id, categoryInput, outcome_statusInput);
-    this.setState({ switchBtn: !switchBtn });
+    let { putRequest, id, category, outcome_status } = this.props;
+    if (categoryInput === "" && outcome_statusInput === "") {
+      putRequest(id, category, outcome_status);
+      this.setState({ switchBtn: !switchBtn });
+    } else if (categoryInput === "" && outcome_statusInput !== "") {
+      putRequest(id, category, outcome_statusInput);
+      this.setState({ switchBtn: !switchBtn });
+    } else if (categoryInput !== "" && outcome_statusInput === "") {
+      putRequest(id, categoryInput, outcome_status);
+      this.setState({ switchBtn: !switchBtn });
+    } else {
+      putRequest(id, categoryInput, outcome_statusInput);
+      this.setState({ switchBtn: !switchBtn });
+    }
   }
-  // handleDelete(){
+  // handleAppeal(){
   //   let{id, deleteRequest}= this.props;
 
   // }
   render() {
     const { outcome_status, category, id, deleteRequest } = this.props;
     const { switchBtn } = this.state;
-    console.log(this.state.categoryInput);
-    console.log(this.state.outcome_statusInput);
     return (
       <div className="condition1">
         {switchBtn ? (
@@ -46,6 +55,7 @@ class CaseFile extends Component {
             />
             <input
               defaultValue={outcome_status}
+              // value={outcome_status}
               onChange={e =>
                 this.setState({ outcome_statusInput: e.target.value })
               }
@@ -58,6 +68,7 @@ class CaseFile extends Component {
                 onClick={e => {
                   e.preventDefault();
                   deleteRequest(id);
+                  this.setState({ switchBtn: !this.state.switchBtn });
                 }}
               >
                 <p>Acquit</p>
