@@ -30,15 +30,16 @@ class CaseFile extends Component {
     console.log(this.state.categoryInput);
     console.log(this.state.outcome_statusInput);
     return (
-      <form>
+      <div className="condition1">
         {switchBtn ? (
-          <div>
+          <form>
             <h4>{category}</h4>
             <p>{outcome_status}</p>
             <button onClick={this.flipSwitch}>View Case File</button>
-          </div>
+          </form>
         ) : (
-          <div>
+          // <div className="condition2">
+          <form>
             <input
               defaultValue={category}
               onChange={e => this.setState({ categoryInput: e.target.value })}
@@ -53,16 +54,21 @@ class CaseFile extends Component {
               <button onClick={this.handleAppeal}>
                 <p>Appeal</p>
               </button>
-              <button onClick={() => deleteRequest(id)}>
+              <button
+                onClick={e => {
+                  e.preventDefault();
+                  deleteRequest(id);
+                }}
+              >
                 <p>Acquit</p>
               </button>
               <button onClick={this.flipSwitch}>
                 <p>Cancel</p>
               </button>
             </span>
-          </div>
+          </form>
         )}
-      </form>
+      </div>
     );
   }
 }

@@ -6,13 +6,11 @@ import CaseFile from "./Components/CaseFile";
 import MakeArrest from "./Components/MakeArrest";
 // import SearchCase from "./Components/SearchCase";
 import Header from "./Components/Header";
+import SearchCase from "./Components/SearchCase";
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      LawAnd: "LAW AND",
-      Order: "ORDER",
-      unit: "Special Victims Unit",
       people: [],
       category: "",
       outcome_status: {
@@ -27,6 +25,7 @@ class App extends Component {
     this.invalid = this.invalid.bind(this);
     this.deleteRequest = this.deleteRequest.bind(this);
     this.putRequest = this.putRequest.bind(this);
+    // this.searchCase = this.searchCase.bind(this);
   }
   componentWillMount() {
     axios.get(`/api/crimes`).then(response => {
@@ -59,6 +58,12 @@ class App extends Component {
   invalid() {
     return alert("Make a valid arrest");
   }
+  // searchCase(searchCrime, searchOutcome) {
+  //   this.setState({
+  //     searchCrime: searchCrime,
+  //     searchOutcome: searchOutcome
+  //   });
+  // }
   render() {
     console.log(this.state.people);
     var { people } = this.state;
@@ -88,11 +93,11 @@ class App extends Component {
       });
     return (
       <div className="home-page">
-        <Header
-          mainHeader={this.state.LawAnd}
-          subHeader={this.state.Order}
-          policeSquad={this.state.unit}
-        />
+        <header>
+          <Header mainHeader={"LAW AND"} color="blue" />
+          <Header mainHeader={"ORDER"} color="red" />
+          <Header mainHeader={"Special Victims Unit"} color="orange" />
+        </header>
         <section>
           <figure>
             <h4>Make an Arrrest</h4>
@@ -129,6 +134,7 @@ class App extends Component {
               onChange={e => this.setState({ searchOutcome: e.target.value })}
             />
           </figure>
+          {/* <SearchCase searchCase={this.searchCase} /> */}
         </section>
         <main>{peopleMapped}</main>
       </div>

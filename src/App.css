@@ -25,7 +25,11 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* position: fixed;
+  background-image: url("http://www.lawyersgunsmoneyblog.com/wp-content/uploads/2013/07/law-and-order00018.png"); */
+  background: #b8b8b8;
 }
+
 main {
   width: 100vw;
   height: 56vh;
@@ -33,6 +37,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  background: #fff3b7;
 }
 figure {
   width: 34vw;
@@ -42,7 +47,8 @@ figure {
   justify-content: space-around;
   align-items: center;
   border-radius: 6px;
-  box-shadow: -5px -2px 8px 1px blue;
+  /* box-shadow: -5px -2px 8px 1px blue; */
+  background: #fba737;
 }
 form {
   width: 13vw;
@@ -50,16 +56,18 @@ form {
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 2em 0 2em;
   margin: 2vh 0 2vh 0;
-  box-shadow: -5px -2px 8px 1px red;
+  /* box-shadow: -5px -2px 8px 1px red; */
+  background: #f4b400;
 }
 input,
 button {
   width: 10vw;
   height: 2vh;
+  background: #b8b8b8;
 }
 p {
   font-size: 1em;
@@ -97,3 +105,11 @@ form div span {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+/* .condition1 {
+  width: 13vw;
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+} */
