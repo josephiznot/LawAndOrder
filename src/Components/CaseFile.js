@@ -20,6 +20,10 @@ class CaseFile extends Component {
     putRequest(id, categoryInput, outcome_statusInput);
     this.setState({ switchBtn: !switchBtn });
   }
+  // handleDelete(){
+  //   let{id, deleteRequest}= this.props;
+
+  // }
   render() {
     const { outcome_status, category, id, deleteRequest } = this.props;
     const { switchBtn } = this.state;

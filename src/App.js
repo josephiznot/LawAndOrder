@@ -36,7 +36,11 @@ class App extends Component {
   postRequest() {
     let { category, outcome_status } = this.state;
     axios.post(`/api/crimes`, { category, outcome_status }).then(res => {
-      this.setState({ people: res.data });
+      this.setState({
+        people: res.data,
+        category: "",
+        outcome_status: { category: "" }
+      });
     });
   }
   deleteRequest(id) {
@@ -95,10 +99,12 @@ class App extends Component {
             <input
               type="text"
               placeholder="enter a crime"
+              value={this.state.category}
               onChange={e => this.setState({ category: e.target.value })}
             />
             <input
               placeholder="enter outcome status"
+              value={this.state.outcome_status.category}
               onChange={e =>
                 this.setState({
                   outcome_status: { category: e.target.value }
