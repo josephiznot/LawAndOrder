@@ -4,9 +4,7 @@ import "./App.css";
 import axios from "axios";
 import CaseFile from "./Components/CaseFile";
 import MakeArrest from "./Components/MakeArrest";
-// import SearchCase from "./Components/SearchCase";
 import Header from "./Components/Header";
-import SearchCase from "./Components/SearchCase";
 class App extends Component {
   constructor() {
     super();
@@ -58,12 +56,6 @@ class App extends Component {
   invalid() {
     return alert("Make a valid arrest");
   }
-  // searchCase(searchCrime, searchOutcome) {
-  //   this.setState({
-  //     searchCrime: searchCrime,
-  //     searchOutcome: searchOutcome
-  //   });
-  // }
   render() {
     var { people } = this.state;
     var peopleMapped = people
@@ -133,7 +125,6 @@ class App extends Component {
               onChange={e => this.setState({ searchOutcome: e.target.value })}
             />
           </figure>
-          {/* <SearchCase searchCase={this.searchCase} /> */}
         </section>
         <main>{peopleMapped}</main>
         <footer>&copy; COPYRIGHT JOE ANDY 2018</footer>

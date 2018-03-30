@@ -14,6 +14,7 @@ axios
 //    crimes = response.data.filter((e, i, arr) => {
 //   return arr.map(element => element.category).indexOf(e.category) === i;
 // });
+//
 module.exports = {
   gitter: function(req, res, next) {
     res.status(200).json(crimes);
