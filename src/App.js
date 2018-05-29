@@ -19,18 +19,13 @@ class App extends Component {
       newCase: [],
       defaultValue: ""
     };
-    this.postRequest = this.postRequest.bind(this);
-    this.invalid = this.invalid.bind(this);
-    this.deleteRequest = this.deleteRequest.bind(this);
-    this.putRequest = this.putRequest.bind(this);
-    // this.searchCase = this.searchCase.bind(this);
   }
   componentWillMount() {
     axios.get(`/api/crimes`).then(response => {
       this.setState({ people: response.data });
     });
   }
-  postRequest() {
+  postRequest = () => {
     let { category, outcome_status } = this.state;
     axios.post(`/api/crimes`, { category, outcome_status }).then(res => {
       this.setState({
@@ -39,23 +34,23 @@ class App extends Component {
         outcome_status: { category: "" }
       });
     });
-  }
-  deleteRequest(id) {
+  };
+  deleteRequest = id => {
     axios.delete(`/api/crimes/${id}`).then(res => {
       this.setState({ people: res.data });
     });
-  }
-  putRequest(id, categoryInput, outcome_statusInput) {
+  };
+  putRequest = (id, categoryInput, outcome_statusInput) => {
     // let { category, outcome_status } = this.state;
     axios
       .put(`/api/crimes/${id}`, { categoryInput, outcome_statusInput })
       .then(res => {
         this.setState({ people: res.data });
       });
-  }
-  invalid() {
+  };
+  invalid = () => {
     return alert("Make a valid arrest");
-  }
+  };
   render() {
     var { people } = this.state;
     var peopleMapped = people

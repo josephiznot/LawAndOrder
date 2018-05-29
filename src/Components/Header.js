@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 function Header(props) {
   return <h1 className={props.color}>{props.mainHeader}</h1>;
 }
