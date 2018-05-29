@@ -12,7 +12,8 @@ form {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("https://i523.photobucket.com/albums/w353/roosevelts2/Misc/svu2.png");
+  /* background-image: url("https://i523.photobucket.com/albums/w353/roosevelts2/Misc/svu2.png"); */
+  background: #acb1ab;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,12 +21,12 @@ form {
 }
 header {
   width: 100vw;
-  height: 25vh;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: black;
+  background: #434341;
 }
 section {
   width: 100vw;
@@ -42,7 +43,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background: #fff3b7;
+  background: #d5ba87;
 }
 figure {
   width: 15vw;
@@ -52,10 +53,10 @@ figure {
   justify-content: space-around;
   align-items: center;
   border-radius: 8px;
-  background: #f4b400;
+  background: #709895;
 }
 form {
-  width: 13vw;
+  width: 220px;
   height: 23vh;
   border-radius: 8px;
   display: flex;
@@ -64,11 +65,11 @@ form {
   align-items: center;
   padding: 0 2em 0 2em;
   margin: 2vh 0 2vh 0;
-  background: #f4b400;
+  background: #709895;
 }
 input,
 button {
-  width: 8vw;
+  width: 115px;
   height: 2vh;
   background: #b8b8b8;
   border-radius: 5px;
@@ -126,4 +127,9 @@ footer {
   align-items: center;
   justify-content: center;
   background: #fff3b7;
+}
+@media (min-width: 1440px) {
+  form {
+    width: 300px;
+  }
 }

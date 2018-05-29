@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CaseFile extends Component {
+export default class CaseFile extends Component {
   constructor() {
     super();
     this.state = {
@@ -8,13 +8,11 @@ class CaseFile extends Component {
       categoryInput: "",
       outcome_statusInput: ""
     };
-    this.flipSwitch = this.flipSwitch.bind(this);
-    this.handleAppeal = this.handleAppeal.bind(this);
   }
-  flipSwitch() {
+  flipSwitch = () => {
     this.setState({ switchBtn: !this.state.switchBtn });
-  }
-  handleAppeal() {
+  };
+  handleAppeal = () => {
     let { switchBtn, categoryInput, outcome_statusInput } = this.state;
     let { putRequest, id, category, outcome_status } = this.props;
     if (categoryInput === "" && outcome_statusInput === "") {
@@ -30,7 +28,7 @@ class CaseFile extends Component {
       putRequest(id, categoryInput, outcome_statusInput);
       this.setState({ switchBtn: !switchBtn });
     }
-  }
+  };
   render() {
     const { outcome_status, category, id, deleteRequest } = this.props;
     const { switchBtn } = this.state;
@@ -77,4 +75,3 @@ class CaseFile extends Component {
     );
   }
 }
-export default CaseFile;

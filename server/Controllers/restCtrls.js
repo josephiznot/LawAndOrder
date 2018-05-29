@@ -32,7 +32,7 @@ module.exports = {
     let { category, outcome_status } = req.body;
     let id = newId;
     crimes.push({ category, outcome_status, id });
-    res.status(200).json(crimes);
+    res.status(201).json(crimes);
     newId++;
   },
   deleter: function(req, res, next) {

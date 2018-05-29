@@ -82,9 +82,10 @@ class App extends Component {
         <header>
           <Header mainHeader={"LAW AND"} color="blue" />
           <Header mainHeader={"ORDER"} color="red" />
-          <Header mainHeader={"Special Victims Unit"} color="orange" />
+          {/* <Header mainHeader={"Special Victims Unit"} color="orange" /> */}
         </header>
         <section>
+          {/* {this.state. */}
           <figure>
             <h4>Make an Arrrest</h4>
             <input
@@ -120,6 +121,7 @@ class App extends Component {
               onChange={e => this.setState({ searchOutcome: e.target.value })}
             />
           </figure>
+          {/* } */}
         </section>
         <main>{peopleMapped}</main>
         <footer>&copy; COPYRIGHT JOE ANDY 2018</footer>
