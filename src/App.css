@@ -46,7 +46,7 @@ main {
   background: #d5ba87;
 }
 figure {
-  width: 15vw;
+  width: 220px;
   height: 17vh;
   display: flex;
   flex-direction: column;
