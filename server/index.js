@@ -14,10 +14,11 @@ app.put("/api/crimes/:id", restCtrls.putter);
 app.post("/api/crimes", restCtrls.poster);
 app.delete("/api/crimes/:id", restCtrls.deleter);
 
-app.listen(port, function() {
-  console.log(`I am listening at port ${port}`);
-});
 const path = require("path");
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
+});
+
+app.listen(port, function() {
+  console.log(`I am listening at port ${port}`);
 });

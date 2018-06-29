@@ -121,9 +121,12 @@ class App extends Component {
               onChange={e => this.setState({ searchOutcome: e.target.value })}
             />
           </figure>
-          {/* } */}
         </section>
-        <main>{peopleMapped}</main>
+        <h2 className="center-all pad-that-ish">Current Arrests</h2>
+        <main>
+          {/* <h2>Current arrests</h2> */}
+          {peopleMapped}
+        </main>
         <footer>&copy; COPYRIGHT JOE ANDY 2018</footer>
       </div>
     );
