@@ -82,7 +82,7 @@ class App extends Component {
         <header>
           <Header mainHeader={"LAW AND"} color="blue" />
           <Header mainHeader={"ORDER"} color="red" />
-          {/* <Header mainHeader={"Special Victims Unit"} color="orange" /> */}
+          <Header mainHeader={"Special Victims Unit"} color="orange" />
         </header>
         <section>
           {/* {this.state. */}

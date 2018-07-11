@@ -1,6 +1,7 @@
 const axios = require("axios");
 var crimes = [];
 let newId = 10000000000;
+
 axios
   .get(
     "https://data.police.uk/api/crimes-no-location?category=all-crime&force=leicestershire"
@@ -15,6 +16,7 @@ axios
 //   return arr.map(element => element.category).indexOf(e.category) === i;
 // });
 //
+
 module.exports = {
   gitter: function(req, res, next) {
     res.status(200).json(crimes);
